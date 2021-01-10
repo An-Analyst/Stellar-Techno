@@ -3,8 +3,13 @@ package com.example.amol.stellartechno;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -12,6 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "freetech.db";
     // User table name
     private static final String TABLE_USER = "user";
+    public static final String TABLE_NAME = "registeruser";
     // User Table Columns names
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_NAME = "user_name";
@@ -49,6 +55,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_USER, null, values);
         db.close();
     }
+
+   /* public String getUsername() throws SQLException {
+        String username = "";
+        Cursor cursor = this.getReadableDatabase().query(
+                TABLE_NAME, new String[] { COLUMN_USER_NAME },
+                null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                username = cursor.getString(1);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return username;
+    }*/
+
+   /* //retrieve data from database
+    public List<User> readAllInfor(){
+        String[] columns ={COLUMN_USER_NAME};
+        List<User> usersList = new ArrayList<User>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.close();
+        return usersList;
+    }*/
 
     // This method to check user exist or not
     public boolean checkUser(String email) {

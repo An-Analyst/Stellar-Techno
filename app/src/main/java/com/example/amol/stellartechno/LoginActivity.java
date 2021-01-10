@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private final AppCompatActivity activity = LoginActivity.this;
     private EditText textInputEditTextEmail;
     private EditText textInputEditTextPassword;
+    private EditText name;
     private Button appCompatButtonLogin;
     private TextView textViewLinkRegister;
     private DatabaseHelper databaseHelper;
@@ -26,11 +27,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().hide();
         textInputEditTextEmail = (EditText) findViewById(R.id.textInputEditTextEmail);
         textInputEditTextPassword = (EditText) findViewById(R.id.textInputEditTextPassword);
+        name = findViewById(R.id.loginName);
         appCompatButtonLogin = (Button) findViewById(R.id.ButtonLogin);
         textViewLinkRegister = (TextView) findViewById(R.id.textViewLinkRegister);
         appCompatButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
         databaseHelper = new DatabaseHelper(activity);
+
     }
 
     @Override
@@ -62,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
                 , textInputEditTextPassword.getText().toString().trim())) {
             Intent accountsIntent = new Intent(activity, Welcome.class);
-            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
+            accountsIntent.putExtra("NAME", name.getText().toString().trim());
             String uemail = textInputEditTextEmail.getText().toString();
             String pass = textInputEditTextPassword.getText().toString();
 

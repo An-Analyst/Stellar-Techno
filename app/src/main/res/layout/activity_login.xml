@@ -5,15 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/tv_title"
+    <EditText
+        android:id="@+id/loginName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/stellar_techno_logo"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edittext_custom"
+        android:hint="@string/hint_name"
+        android:inputType="text"
+        android:padding="15dp"
         android:layout_above="@id/textInputEditTextEmail"
-        />
+        android:textColor="@color/colorBackground"
+        android:textColorHint="@color/colorBackground"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/textInputEditTextEmail"
@@ -28,6 +34,7 @@
         android:inputType="textEmailAddress"
         android:layout_above="@id/textInputEditTextPassword"
         android:background="@drawable/edittext_custom"
+        android:layout_marginBottom="20dp"
         android:textSize="15sp" />
     <EditText
         android:id="@+id/textInputEditTextPassword"
@@ -43,6 +50,7 @@
         android:inputType="textPassword"
         android:layout_centerInParent="true"
         android:background="@drawable/edittext_custom"
+        android:layout_marginBottom="20dp"
         android:textSize="15sp" />
     <Button
         android:id="@+id/ButtonLogin"
@@ -54,7 +62,9 @@
         android:layout_marginRight="20dp"
         android:textColor="@color/colorText"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/text_login"/>
+
     <TextView
         android:id="@+id/textViewLinkRegister"
         android:layout_width="wrap_content"
@@ -64,5 +74,5 @@
         android:textColor="@color/colorBackground"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="200dp"/>
+        android:layout_marginBottom="120dp" />
 </RelativeLayout>
