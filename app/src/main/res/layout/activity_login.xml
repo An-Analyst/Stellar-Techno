@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stellar_techno_logo"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/textInputEditTextEmail"
+        />
+
+    <EditText
+        android:id="@+id/textInputEditTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/colorBackground"
+        android:hint="@string/hint_email"
+        android:textColorHint="@color/colorBackground"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:inputType="textEmailAddress"
+        android:layout_above="@id/textInputEditTextPassword"
+        android:background="@drawable/edittext_custom"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/textInputEditTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/hint_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorBackground"
+        android:textColorHint="@color/colorBackground"
+        android:padding="15dp"
+        android:inputType="textPassword"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edittext_custom"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/ButtonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputEditTextPassword"
+        android:background="@drawable/button_custom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="15dp"
+        android:text="@string/text_login"/>
+    <TextView
+        android:id="@+id/textViewLinkRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_not_member"
+        android:textSize="20sp"
+        android:textColor="@color/colorBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"/>
+</RelativeLayout>
